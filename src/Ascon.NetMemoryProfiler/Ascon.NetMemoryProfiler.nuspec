@@ -10,7 +10,7 @@
     <description>ASCON NetMemoryProfiler is a set of APIs for memory analysis of .NET processes</description>
     <copyright>Copyright © ASCON Company 2017</copyright>
     <iconUrl>http://pilot.sd.ascon.ru/img/images/32.png</iconUrl>
-    <projectUrl>http://pilotems.com/</projectUrl>
+    <projectUrl>https://github.com/hindikaynen/NetMemoryProfiler</projectUrl>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <dependencies>
     </dependencies>
