@@ -41,8 +41,7 @@ namespace Ascon.NetMemoryProfiler
         private static void Inject(int pid)
         {
             var process = Process.GetProcessById(pid);
-            var location = Assembly.GetEntryAssembly().Location;
-            var directory = Path.GetDirectoryName(location);
+            var directory = AppDomain.CurrentDomain.BaseDirectory;
             var osArchFolder = Environment.Is64BitOperatingSystem ? "x64" : "x86";
             var file = Path.Combine(directory, "ManagedInjector", osArchFolder, "ManagedInjector.exe");
             var args = $"{process.MainWindowHandle} \"{typeof(GcController).Assembly.Location}\" \"{typeof(GcController).FullName}\" \"Start\"";

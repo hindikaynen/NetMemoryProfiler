@@ -66,7 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".nuget\NuGet.targets" />
-    <None Include="Ascon.NetMemoryProfiler.nuspec" />
+    <None Include="Ascon.NetMemoryProfiler.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Ascon.NetMemoryProfiler.targets" />
     <None Include="packages.config" />
   </ItemGroup>
