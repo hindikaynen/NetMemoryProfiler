@@ -12,3 +12,4 @@ using (var session = Profiler.AttachToProcess("MyApp"))
 	var retentions = session.FindRetentions(objects);
 }
 ```
+Available at https://www.nuget.org/packages/Ascon.NetMemoryProfiler
