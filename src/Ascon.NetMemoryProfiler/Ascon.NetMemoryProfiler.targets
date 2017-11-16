@@ -1,5 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)GarbageCollector.dll">
+      <Link>GarbageCollector.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)ManagedInjector\x64\ManagedInjector.exe">
       <Link>ManagedInjector\x64\ManagedInjector.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

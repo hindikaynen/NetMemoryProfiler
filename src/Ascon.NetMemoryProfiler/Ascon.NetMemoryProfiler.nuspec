@@ -16,8 +16,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\bin\$Configuration$\GarbageCollector.dll" target="lib\net45" />
     <file src="Ascon.NetMemoryProfiler.targets" target="Build\" />
+    <file src="..\..\bin\$Configuration$\GarbageCollector.dll" target="build\" />
     <file src="..\..\bin\$Configuration$\ManagedInjector\x64\ManagedInjector.exe" target="build\ManagedInjector\x64\"/>
     <file src="..\..\bin\$Configuration$\ManagedInjector\x64\ManagedInjector64-4.0.dll" target="build\ManagedInjector\x64\"/>
     <file src="..\..\bin\$Configuration$\ManagedInjector\x86\ManagedInjector.exe" target="build\ManagedInjector\x86\"/>
