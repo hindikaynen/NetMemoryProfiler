@@ -13,3 +13,7 @@ using (var session = Profiler.AttachToProcess("MyApp"))
 }
 ```
 Available at https://www.nuget.org/packages/Ascon.NetMemoryProfiler
+
+Requirements:
+.NET Framework 4 or later
+Microsoft visual C++ 2010 Redistributable installed
