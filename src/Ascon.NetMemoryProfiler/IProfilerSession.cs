@@ -27,5 +27,11 @@ namespace Ascon.NetMemoryProfiler
         /// if the process was stopped in the middle of a GC, which can cause the GC heap to be unwalkable.
         /// </summary>
         bool IsHeapConsistent { get; }
+
+        /// <summary>
+        /// Returns current threads of the process.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<ThreadInfo> GetCurrentThreads();
     }
 }

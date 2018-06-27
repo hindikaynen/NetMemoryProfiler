@@ -20,11 +20,11 @@ namespace Ascon.NetMemoryProfiler
         {
             var processes = Process.GetProcessesByName(processName);
             if (!processes.Any())
-                throw new InvalidOperationException($"Process {processName} not found");
+                throw new InvalidOperationException($"Process {processName} not found.");
             if (processes.Length > 1)
-                throw new InvalidOperationException($"Multiple processes {processName} found. Use the Profiler.AttachToProcess(int pid) overload to determine which process you want to attach.");
+                throw new InvalidOperationException($"Multiple processes {processName} found. Use the Profiler.AttachToProcess(int pid) overload to determine the exact process to attach to.");
 
-            return AttachToProcess(processes.First().Id);
+            return AttachToProcess(processes.First().Id, timeout);
         }
 
         /// <summary>

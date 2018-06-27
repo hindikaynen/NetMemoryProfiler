@@ -54,6 +54,11 @@ namespace Ascon.NetMemoryProfiler
 
         public bool IsHeapConsistent => _runtime.Heap.CanWalkHeap;
 
+        public IEnumerable<ThreadInfo> GetCurrentThreads()
+        {
+            return _runtime.Threads.Select(ThreadInfo.ConvertFrom).ToList();
+        }
+
         public void Dispose()
         {
             _dataTarget.Dispose();
