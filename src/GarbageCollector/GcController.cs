@@ -57,6 +57,7 @@ namespace GarbageCollector
                             {
                                 GC.Collect();
                                 GC.WaitForPendingFinalizers();
+                                GC.Collect();
 
                                 _pipeServer.WriteByte(Const.OK_RESPONSE);
                             }
