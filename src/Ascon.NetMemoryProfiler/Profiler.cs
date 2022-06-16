@@ -15,8 +15,9 @@ namespace Ascon.NetMemoryProfiler
         /// </summary>
         /// <param name="processName">Process name</param>
         /// <param name="timeout">Timeout in ms</param>
+        /// <param name="forceGarbageCollection"></param>
         /// <returns>Profiling session</returns>
-        public static IProfilerSession AttachToProcess(string processName, uint timeout = 5000)
+        public static IProfilerSession AttachToProcess(string processName, uint timeout = 5000, bool forceGarbageCollection = true)
         {
             var processes = Process.GetProcessesByName(processName);
             if (!processes.Any())
@@ -24,7 +25,7 @@ namespace Ascon.NetMemoryProfiler
             if (processes.Length > 1)
                 throw new InvalidOperationException($"Multiple processes {processName} found. Use the Profiler.AttachToProcess(int pid) overload to determine the exact process to attach to.");
 
-            return AttachToProcess(processes.First().Id, timeout);
+            return AttachToProcess(processes.First().Id, timeout, forceGarbageCollection);
         }
 
         /// <summary>
@@ -32,10 +33,12 @@ namespace Ascon.NetMemoryProfiler
         /// </summary>
         /// <param name="pid">Process ID</param>
         /// <param name="timeout">Timeout in ms</param>
+        /// <param name="forceGarbageCollection"></param>
         /// <returns>Profiling session</returns>
-        public static IProfilerSession AttachToProcess(int pid, uint timeout = 5000)
+        public static IProfilerSession AttachToProcess(int pid, uint timeout = 5000, bool forceGarbageCollection = true)
         {
-            GarbageCollectorRunner.ForceGarbageCollectionInRemoteProcess(pid);
+            if(forceGarbageCollection)
+                GarbageCollectorRunner.ForceGarbageCollectionInRemoteProcess(pid);
             return new ProfilerSession(DataTarget.AttachToProcess(pid, timeout));
         }
 
