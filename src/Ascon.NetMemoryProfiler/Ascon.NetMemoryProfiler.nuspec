@@ -2,18 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Ascon.NetMemoryProfiler</id>
-    <version>1.0.4</version>
+    <version>1.0.6</version>
     <title>ASCON NetMemoryProfiler</title>
     <authors>ASCON</authors>
     <owners>ASCON</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>ASCON NetMemoryProfiler is a set of APIs for memory analysis of .NET processes</description>
     <copyright>Copyright © ASCON Company 2017</copyright>
-    <iconUrl>http://pilot.sd.ascon.ru/img/images/32.png</iconUrl>
-    <projectUrl>https://github.com/hindikaynen/NetMemoryProfiler</projectUrl>
-    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <dependencies>
-    </dependencies>
+	<projectUrl>https://github.com/hindikaynen/NetMemoryProfiler</projectUrl>
+	<icon>icon.png</icon>
+	<license type="expression">Apache-2.0</license>
+	<dependencies>
+		<group targetFramework=".NETFramework4.5">
+			<dependency id="Microsoft.Diagnostics.Runtime" version="0.9.180305.01"/>
+		</group>
+	</dependencies>
   </metadata>
   <files>
     <file src="Ascon.NetMemoryProfiler.targets" target="Build\" />
@@ -22,5 +25,6 @@
     <file src="..\..\bin\$Configuration$\ManagedInjector\x64\ManagedInjector64-4.0.dll" target="build\ManagedInjector\x64\"/>
     <file src="..\..\bin\$Configuration$\ManagedInjector\x86\ManagedInjector.exe" target="build\ManagedInjector\x86\"/>
     <file src="..\..\bin\$Configuration$\ManagedInjector\x86\ManagedInjector32-4.0.dll" target="build\ManagedInjector\x86\"/>
+    <file src="..\..\icon.png" target="" />
   </files>
 </package>
